@@ -1,0 +1,144 @@
+<section class="site-section bg-light" id="contact-section" data-aos="fade">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12 text-center">
+          <h2 class="section-title mb-3">Creer Compte</h2>
+        </div>
+      </div>
+      <div class="row mb-5">
+        
+
+
+        <div class="col-md-4 text-center">
+          <p class="mb-4">
+            <span class="icon-room d-block h2 text-primary"></span>
+            <span>203 Fake St. Mountain View, San Francisco, California, USA</span>
+          </p>
+        </div>
+        <div class="col-md-4 text-center">
+          <p class="mb-4">
+            <span class="icon-phone d-block h2 text-primary"></span>
+            <a href="#">+1 232 3235 324</a>
+          </p>
+        </div>
+        <div class="col-md-4 text-center">
+          <p class="mb-0">
+            <span class="icon-mail_outline d-block h2 text-primary"></span>
+            <a href="#">youremaildomain.com</a>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 mb-5">        
+
+            <form action="#" class="p-5 bg-white" (ngSubmit)="soumettre()">
+                <h2 class="h4 text-black mb-5">Formulaire de compte</h2>
+              
+                <!-- Ligne 1 : Nom, Prénom, Date de naissance -->
+                <div class="row form-group">
+                  <div class="col-md-4 mb-3 mb-md-0">
+                    <label class="text-black" for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" [(ngModel)]="nom" class="form-control" required>
+                  </div>
+                  <div class="col-md-4 mb-3 mb-md-0">
+                    <label class="text-black" for="prenom">Prénom</label>
+                    <input type="text" id="prenom" name="prenom" [(ngModel)]="prenom" class="form-control" required>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="text-black" for="date_naissance">Date de naissance</label>
+                    <input type="date" id="date_naissance" name="date_naissance" [(ngModel)]="dateNaissance" class="form-control" required>
+                  </div>
+                </div>
+              
+                <!-- Ligne 2 : Carte d'identité, Nationalité, Sexe -->
+                <div class="row form-group">
+                  <div class="col-md-4 mb-3 mb-md-0">
+                    <label class="text-black" for="identite">Carte d'identité ou passeport</label>
+                    <input type="text" id="identite" name="identite" [(ngModel)]="identite" class="form-control" required>
+                  </div>
+                  <div class="col-md-4 mb-3 mb-md-0">
+                    <label class="text-black" for="nationalite">Nationalité</label>
+                    <input type="text" id="nationalite" name="nationalite" [(ngModel)]="nationalite" class="form-control" required>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="text-black" for="sexe">Sexe</label>
+                    <select id="sexe" name="sexe" [(ngModel)]="sexe" class="form-control" required>
+                      <option value="homme">Homme</option>
+                      <option value="femme">Femme</option>
+                      <option value="autre">Autre</option>
+                    </select>
+                  </div>
+                </div>
+              
+                <!-- Ligne 3 : Email, Téléphone, Profession -->
+                <div class="row form-group">
+                  <div class="col-md-4 mb-3 mb-md-0">
+                    <label class="text-black" for="email">Email</label>
+                    <input type="email" id="email" name="email" [(ngModel)]="email" class="form-control" required>
+                  </div>
+                  <div class="col-md-4 mb-3 mb-md-0">
+                    <label class="text-black" for="telephone">Téléphone</label>
+                    <input type="tel" id="telephone" name="telephone" [(ngModel)]="telephone" class="form-control" required>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="text-black" for="profession">Profession</label>
+                    <input type="text" id="profession" name="profession" [(ngModel)]="profession" class="form-control" required>
+                  </div>
+                </div>
+              
+                <!-- Ligne 4 : Rue, Ville, Pays -->
+                <div class="row form-group">
+                  <div class="col-md-4 mb-3 mb-md-0">
+                    <label class="text-black" for="rue">Rue</label>
+                    <input type="text" id="rue" name="rue" [(ngModel)]="rue" class="form-control" required>
+                  </div>
+                  <div class="col-md-4 mb-3 mb-md-0">
+                    <label class="text-black" for="ville">Ville</label>
+                    <input type="text" id="ville" name="ville" [(ngModel)]="ville" class="form-control" required>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="text-black" for="pays">Pays</label>
+                    <input type="text" id="pays" name="pays" [(ngModel)]="pays" class="form-control" required>
+                  </div>
+                </div>
+              
+                <!-- Ligne 5 : Salaire, Statut d'emploi, Type de compte -->
+                <div class="row form-group">
+                  <div class="col-md-4 mb-3 mb-md-0">
+                    <label class="text-black" for="salaire">Salaire</label>
+                    <input type="number" id="salaire" name="salaire" [(ngModel)]="salaire" class="form-control" required>
+                  </div>
+                  <div class="col-md-4 mb-3 mb-md-0">
+                    <label class="text-black" for="statut_emploi">Statut d'emploi</label>
+                    <select id="statut_emploi" name="statut_emploi" [(ngModel)]="statutEmploi" class="form-control" required>
+                      <option value="salarie">Salarié</option>
+                      <option value="independant">Indépendant</option>
+                      <option value="etudiant">Étudiant</option>
+                      <option value="retraite">Retraité</option>
+                      <option value="autre">Autre</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="text-black" for="type_compte">Type de compte</label>
+                    <select id="type_compte" name="type_compte" [(ngModel)]="typeCompte" class="form-control" required>
+                      <option value="compte_courant">Compte Courant</option>
+                      <option value="compte_epargne">Compte Épargne</option>
+                      <option value="compte_entreprise">Compte Entreprise</option>
+                    </select>
+                  </div>
+                </div>
+              
+             
+              
+                <!-- Bouton de soumission -->
+                <div class="row form-group">
+                  <div class="col-md-12">
+                    <input type="submit"  value="Soumettre" class="btn btn-primary btn-md text-white">
+                  </div>
+                </div>
+              </form>
+        </div>
+        
+      </div>
+    </div>
+  </section>
