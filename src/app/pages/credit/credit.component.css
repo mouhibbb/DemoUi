@@ -1,0 +1,9 @@
+.bg-light {
+    background: rgba(255, 255, 255, 0.1) !important; /* Forcer la transparence */
+    backdrop-filter: blur(10px); /* Flou de l'arrière-plan */
+    border-radius: 20px!important;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Bordure subtile pour visibilité */
+  }
+  

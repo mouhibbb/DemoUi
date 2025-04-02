@@ -65,7 +65,6 @@
                     <select id="sexe" name="sexe" [(ngModel)]="sexe" class="form-control" required>
                       <option value="homme">Homme</option>
                       <option value="femme">Femme</option>
-                      <option value="autre">Autre</option>
                     </select>
                   </div>
                 </div>
@@ -88,19 +87,24 @@
               
                 <!-- Ligne 4 : Rue, Ville, Pays -->
                 <div class="row form-group">
-                  <div class="col-md-4 mb-3 mb-md-0">
-                    <label class="text-black" for="rue">Rue</label>
-                    <input type="text" id="rue" name="rue" [(ngModel)]="rue" class="form-control" required>
+                    <div class="col-md-3 mb-3 mb-md-0">
+                      <label class="text-black" for="rue">Rue</label>
+                      <input type="text" id="rue" name="rue" [(ngModel)]="rue" class="form-control" required>
+                    </div>
+                    <div class="col-md-3 mb-3 mb-md-0">
+                      <label class="text-black" for="ville">Ville</label>
+                      <input type="text" id="ville" name="ville" [(ngModel)]="ville" class="form-control" required>
+                    </div>
+                    <div class="col-md-3 mb-3 mb-md-0">
+                      <label class="text-black" for="pays">Pays</label>
+                      <input type="text" id="pays" name="pays" [(ngModel)]="pays" class="form-control" required>
+                    </div>
+                    <div class="col-md-3">
+                      <label class="text-black" for="code_postal">Code postal</label>
+                      <input type="text" id="code_postal" name="code_postal" [(ngModel)]="codePostal" class="form-control" required>
+                    </div>
                   </div>
-                  <div class="col-md-4 mb-3 mb-md-0">
-                    <label class="text-black" for="ville">Ville</label>
-                    <input type="text" id="ville" name="ville" [(ngModel)]="ville" class="form-control" required>
-                  </div>
-                  <div class="col-md-4">
-                    <label class="text-black" for="pays">Pays</label>
-                    <input type="text" id="pays" name="pays" [(ngModel)]="pays" class="form-control" required>
-                  </div>
-                </div>
+                  
               
                 <!-- Ligne 5 : Salaire, Statut d'emploi, Type de compte -->
                 <div class="row form-group">
@@ -127,13 +131,14 @@
                     </select>
                   </div>
                 </div>
+                
               
              
               
                 <!-- Bouton de soumission -->
                 <div class="row form-group">
                   <div class="col-md-12">
-                    <input type="submit"  value="Soumettre" class="btn btn-primary btn-md text-white">
+                    <input type="submit" value="Soumettre" class="btn btn-primary btn-block">
                   </div>
                 </div>
               </form>

@@ -1,0 +1,4 @@
+::ng-deep .mat-elevation-z8 {
+    background: rgba(239, 234, 234, 0.2) !important;
+    box-shadow: none !important;
+  }

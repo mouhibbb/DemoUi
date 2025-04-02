@@ -1,1 +1,51 @@
-<p>credit works!</p>
+<div
+  class="site-blocks-cover overlay"
+  style="background-image: url(assets/images/hero_2.jpg)"
+  data-aos="fade"
+  id="home-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-8 mx-auto mt-lg-5 p-5 rounded shadow bg-light">
+        <h2 class="text-center mb-4">Demande de Crédit</h2>
+        <form (ngSubmit)="soumettreCredit()">
+          <div class="form-group">
+            <label for="montant">Montant du Crédit (€)</label>
+            <input type="number" class="form-control" name="montant" id="montant" [(ngModel)]="montant" placeholder="Entrez le montant" required>
+          </div>
+
+          <div class="form-group">
+            <label for="duree">Durée (mois)</label>
+            <input type="number" class="form-control" name="duree" [(ngModel)]="duree" id="duree" placeholder="Durée en mois" required>
+          </div>
+
+          <div class="form-group">
+            <label for="mensualite">Mensualité (€)</label>
+            <input type="number" class="form-control" id="mensualite" [(ngModel)]="mensualite" name="mensualite" placeholder="Mensualité estimée" required>
+          </div>
+
+          <div class="form-group">
+            <label for="typeCredit">Type de crédit</label>
+            <select class="form-control" id="typeCredit" required name="typeCredit" [(ngModel)]="typeCredit">
+              <option value="">Sélectionnez un type</option>
+              <option value="Credit_a_la_consommation">Crédit à la consommation</option>
+              <option value="Credit_immobilier">Crédit immobilier</option>
+              <option value="Credit_voiture">Crédit voiture</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="dateAccord">Date d'accord</label>
+            <input type="date" class="form-control" id="dateAccord" required name="dateAccord" [(ngModel)]="dateAccord">
+          </div>
+
+          <div class="form-group">
+            <label for="dateEcheance">Date de la première échéance</label>
+            <input type="date" class="form-control" id="dateEcheance" required name="dateEcheance" [(ngModel)]="dateEcheance">
+          </div>
+
+          <button type="submit" value="Soumettre" class="btn btn-primary btn-block mt-3">Soumettre</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

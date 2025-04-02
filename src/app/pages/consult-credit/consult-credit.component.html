@@ -1,0 +1,62 @@
+<div
+  class="site-blocks-cover overlay"
+  style="background-image: url(assets/images/img_3.jpg)"
+  data-aos="fade"
+  id="home-section">
+  <div class="container">
+    <div class="row align-items-center">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+          
+            <!-- id Column -->
+            <ng-container matColumnDef="idCredit">
+              <th mat-header-cell *matHeaderCellDef> Id </th>
+              <td mat-cell *matCellDef="let element"> {{element.idCredit}} </td>
+            </ng-container>
+            
+            <!-- cin Column -->
+            <ng-container matColumnDef="montant">
+              <th mat-header-cell *matHeaderCellDef> Montant </th>
+              <td mat-cell *matCellDef="let element"> {{element.montant}} </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="mensualite">
+              <th mat-header-cell *matHeaderCellDef> Mensualite </th>
+              <td mat-cell *matCellDef="let element"> {{element.mensualite}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="dateEcheance">
+              <th mat-header-cell *matHeaderCellDef> Date echeance </th>
+              <td mat-cell *matCellDef="let element"> {{element.dateEcheance}} </td>
+            </ng-container>
+          
+            <!-- Type compte Column -->
+            <ng-container matColumnDef="statusCredit">
+              <th mat-header-cell *matHeaderCellDef> Situation Credit </th>
+              <td mat-cell *matCellDef="let element"> {{element.statusCredit.replace('_', ' ') }} </td>
+            </ng-container>
+            <!-- Status Compte Bancaire Column -->
+            <ng-container matColumnDef="dureeMois">
+              <th mat-header-cell *matHeaderCellDef> Duree (mois) </th>
+              <td mat-cell *matCellDef="let element"> {{element.dureeMois}} </td>
+            </ng-container>
+
+            <!-- Status Compte Bancaire Column -->
+            <ng-container matColumnDef="typeCredit">
+              <th mat-header-cell *matHeaderCellDef> Type credit </th>
+              <td mat-cell *matCellDef="let element"> {{replaceUnderscoreWithSpace(element.typeCredit)}} </td>
+            </ng-container>
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          
+          
+        <div class="col-md-12 mt-lg-5">
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+/* Supprimer l'ombre et le fond */
+::ng-deep .mat-elevation-z8 {
+    background: rgba(239, 234, 234, 0.2) !important;
+    box-shadow: none !important;
+  }
+  
+/* Augmenter la taille du texte des cellules */
+::ng-deep .mat-cell, 
+::ng-deep .mat-header-cell {
+  font-size: 18px !important; /* Taille du texte */
+  color: white !important; /* Couleur du texte */
+  font-weight: bold; /* Mettre en gras */
+}
+
+/* Changer la couleur et la taille du texte du header */
+::ng-deep .mat-header-row {
+  font-size: 20px !important;
+  color: #ffcc00 !important; /* Couleur dorée pour l'en-tête */
+  font-weight: bold;
+}
+.bold {
+    font-weight: bold;
+  }
+  
+  .italic {
+    font-style: italic;
+  }
+  
+  .underline {
+    text-decoration: underline;
+  }
+  
+
+  .mat-elevation-z8 th, 
+  .mat-elevation-z8 td {
+    color: rgb(0, 0, 0) !important;
+  }
+  
+  table {
+    margin-top: 100px; /* Ajuste la valeur selon ton besoin */
+  }
+  

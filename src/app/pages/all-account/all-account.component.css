@@ -1,0 +1,14 @@
+/* Supprimer l'ombre et le fond */
+::ng-deep .mat-elevation-z8 {
+    background: rgba(239, 234, 234, 0.2) !important;
+    box-shadow: none !important;
+  }
+  .lower-table {
+    margin-top: 40px; /* Ajuste la valeur selon ton besoin */
+  }
+  .mat-elevation-z8 th, 
+  .mat-elevation-z8 td {
+    color: rgb(0, 0, 0) !important;
+  }
+
+  

@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, firstValueFrom } from 'rxjs';
+import { UserService } from './user.service';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SharedService {
+  dataSource= new MatTableDataSource<any>([])
+
   private showSignupFields: boolean = false;
   private connectedSource = new BehaviorSubject<boolean>(false); // Stocke la valeur actuelle
   connected$ = this.connectedSource.asObservable(); // Observable pour les abonnements
 
-  constructor() { }
+  constructor(private userService:UserService) { }
 
   toggleSignupFields() {
     console.log(this.showSignupFields);
@@ -28,4 +32,10 @@ export class SharedService {
     this.connectedSource.next(false);
     console.log('Déconnexion réussie',this.connectedSource);
   }
+  userEmail(){
+    return localStorage.getItem('userEmail')
+  }
+  
+
+
 }

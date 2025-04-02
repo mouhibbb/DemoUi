@@ -1,0 +1,6 @@
+.invalid-feedback small {
+    font-size: 1.2em; /* Augmente la taille du texte */
+    font-weight: bold; /* Rend le texte plus lisible */
+    color: red; /* Optionnel : changer la couleur pour plus de visibilité */
+  }
+  

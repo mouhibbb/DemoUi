@@ -1,0 +1,164 @@
+<div
+  class="site-blocks-cover overlay"
+  style="background-image: url(assets/images/hero_2.jpg)"
+  data-aos="fade"
+  id="home-section"
+>
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Carousel à gauche -->
+      <div class="col-md-6 mt-lg-5">
+        <div class="single-text owl-carousel">
+          <div class="slide">
+            <h1 class="text-uppercase" data-aos="fade-up">Banking Solutions</h1>
+            <p class="mb-5 desc" data-aos="fade-up" data-aos-delay="100">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Provident cupiditate suscipit, magnam libero velit esse sapiente
+              officia inventore!
+            </p>
+          </div>
+          <div class="slide">
+            <h1 class="text-uppercase" data-aos="fade-up">
+              Financing Solutions
+            </h1>
+            <p class="mb-5 desc" data-aos="fade-up" data-aos-delay="100">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Provident cupiditate suscipit, magnam libero velit esse sapiente
+              officia inventore!
+            </p>
+          </div>
+          <div class="slide">
+            <h1 class="text-uppercase" data-aos="fade-up">Savings Accounts</h1>
+            <p class="mb-5 desc" data-aos="fade-up" data-aos-delay="100">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Provident cupiditate suscipit, magnam libero velit esse sapiente
+              officia inventore!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulaire à droite -->
+      <div class="col-md-6">
+        <form
+        [formGroup]="form"
+          action="#"
+          class="p-5"
+          style="background-color: transparent; border-radius: 8px"
+        >
+          <div class="row form-group">
+            <div class="col-md-12">
+              <input
+                type="text"
+                name="lastName"
+                id="lastName"
+                formControlName="lastName"
+                class="form-control"
+                placeholder="Nom"
+                [ngClass]="{'is-invalid': form.get('lastName')?.invalid && form.get('lastName')?.touched}"
+
+                required minlength="2" 
+              />
+              <div class="invalid-feedback" *ngIf="form.get('lastName')?.invalid && form.get('lastName')?.touched">
+                <small *ngIf="form.get('lastName')?.errors?.['required']">Le nom est obligatoire.</small>
+                <small *ngIf="form.get('lastName')?.errors?.['minlength']">Le nom doit contenir au moins 2 caractères.</small>
+              </div>
+          
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-12">
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                formControlName="firstName"
+                class="form-control"
+                placeholder="Prénom" required minlength="2"
+                [ngClass]="{'is-invalid': form.get('firstName')?.invalid && form.get('firstName')?.touched}"
+              />
+              <div class="invalid-feedback" *ngIf="form.get('firstName')?.invalid && form.get('firstName')?.touched">
+                <small *ngIf="form.get('firstName')?.errors?.['required']">Le prenom est obligatoire.</small>
+                <small *ngIf="form.get('firstName')?.errors?.['minlength']">Le prenom doit contenir au moins 2 caractères.</small>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="row form-group">
+            <div class="col-md-12">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                formControlName="email"
+                class="form-control"
+                placeholder="Email"
+                required email
+                [ngClass]="{'is-invalid': form.get('email')?.invalid && form.get('email')?.touched}"
+
+              />
+              <div class="invalid-feedback" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+                <small *ngIf="form.get('email')?.errors?.['required']">L'email est obligatoire.</small>
+                <small *ngIf="form.get('email')?.errors?.['email']">Veuillez entrer un email valide.</small>
+              </div>
+          
+            </div>
+          </div>
+
+          <div class="row form-group">
+            <div class="col-md-12">
+              <input
+                type="password"
+                id="password"
+                formControlName="password"
+                name="password"
+                class="form-control"
+                placeholder="Mot de passe"
+                [ngClass]="{'is-invalid': form.get('password')?.invalid && form.get('password')?.touched}"
+
+              />
+              <div class="invalid-feedback" *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+                <small *ngIf="form.get('password')?.errors?.['required']">Le mot de passe est obligatoire.</small>
+                <small *ngIf="form.get('password')?.errors?.['minlength']">Le mot de passe doit contenir au moins 6 caractères.</small>
+              </div>
+          
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-12">
+              <input
+                type="password"
+                name="confirmPassword"
+                id="confirmPassword"
+                formControlName="confirmPassword"
+                class="form-control"
+                placeholder="Confirmer le mot de passe" required minlength="6"
+                [ngClass]="{'is-invalid': form.get('confirmPassword')?.invalid && form.get('confirmPassword')?.touched}"
+
+              />
+              <div class="invalid-feedback" *ngIf="form.get('confirmPassword')?.invalid && form.get('confirmPassword')?.touched">
+                <small *ngIf="form.get('confirmPassword')?.errors?.['required']">Veuillez confirmer le mot de passe.</small>
+                <small *ngIf="form.get('confirmPassword')?.errors?.['mismatch']">Les mots de passe ne correspondent pas.</small>
+              </div>
+          
+            </div>
+          </div>
+
+          <div class="row form-group">
+            <!-- Bouton Créer un compte -->
+            <div class="col-md-12">
+              <input
+                type="button"
+                value="Rejoindre"
+                class="btn btn-outline-primary btn-md w-100"
+                style="border-width: 2px; font-weight: bold"
+                (click)="inscription()"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

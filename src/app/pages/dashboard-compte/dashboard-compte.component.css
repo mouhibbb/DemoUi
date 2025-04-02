@@ -1,0 +1,62 @@
+/* table {
+    width: 100%;
+    margin: 16px 0;
+  }
+  
+  .mat-elevation-z8 {
+    border-radius: 8px;
+  }
+  
+  mat-toolbar {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .table-container {
+    padding: 20px;
+    border-radius: 10px;
+    background: #fff;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+  }
+  
+  mat-form-field.filter-input {
+    width: 300px;
+  }
+  
+  .styled-table {
+    width: 100%;
+  }
+  
+  .mat-header-cell {
+    font-weight: bold;
+    background: #f4f4f4;
+    color: #333;
+    text-transform: uppercase;
+  }
+  
+  .mat-row:hover {
+    background: #b19090;
+  }
+  
+  .mat-icon {
+    vertical-align: middle;
+    font-size: 20px;
+  }
+  
+  mat-paginator {
+    margin-top: 15px;
+  }
+   */
+   mat-card {
+    background-color: transparent !important;
+    box-shadow: none !important; /* Supprime l'ombre du mat-card */
+  }
+  
+  .mat-elevation-z8 {
+    background-color: transparent !important;
+  }
+  

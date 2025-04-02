@@ -1,0 +1,111 @@
+<div
+  class="site-blocks-cover overlay"
+  style="background-image: url(assets/images/img_1.jpg)"
+  data-aos="fade"
+  id="home-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-12 mt-lg-5">
+        <mat-tab-group>
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+                First
+              </ng-template>
+              <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+          
+                <!-- id Column -->
+                <ng-container matColumnDef="idCredit">
+                  <th mat-header-cell *matHeaderCellDef style="min-width: 95px;"> Id credit</th>
+                  <td mat-cell *matCellDef="let element"> {{element.idCredit}} </td>
+                </ng-container>
+                <!-- id Column -->
+                <ng-container matColumnDef="idCompte">
+                  <th mat-header-cell *matHeaderCellDef style="min-width: 98px;"> Id compte</th>
+                  <td mat-cell *matCellDef="let element"> {{element.compte.idCompte}} </td>
+                </ng-container>
+                
+                <!-- id Column -->
+                <ng-container matColumnDef="nom_prenom">
+                  <th mat-header-cell *matHeaderCellDef style="min-width: 120px;"> Client</th>
+                  <td mat-cell *matCellDef="let element"> {{element.compte.nom+" "+ element.compte.prenom}} </td>
+                </ng-container>
+                
+                <!-- cin Column -->
+                <ng-container matColumnDef="montant">
+                  <th mat-header-cell *matHeaderCellDef > Montant </th>
+                  <td mat-cell *matCellDef="let element"> {{element.montant}} </td>
+                </ng-container>
+              
+                <!-- Name Column -->
+                <ng-container matColumnDef="mensualite">
+                  <th mat-header-cell *matHeaderCellDef> Mensualité </th>
+                  <td mat-cell *matCellDef="let element"> {{element.mensualite}} </td>
+                </ng-container>
+                <!-- Name Column -->
+                <ng-container matColumnDef="dureeMois">
+                  <th mat-header-cell *matHeaderCellDef style="min-width: 115px;"> Duree (Mois) </th>
+                  <td mat-cell *matCellDef="let element"> {{element.dureeMois}} </td>
+                </ng-container>
+                 
+                <!-- Weight Column -->
+                <ng-container matColumnDef="dateAccord">
+                  <th mat-header-cell *matHeaderCellDef style="min-width: 120px;"> Date accord</th>
+                  <td mat-cell *matCellDef="let element"> {{element.dateAccord}} </td>
+                </ng-container>
+              
+                <!-- Weight Column -->
+                <ng-container matColumnDef="dateEcheance">
+                  <th mat-header-cell *matHeaderCellDef style="min-width: 130px;"> Date echeance</th>
+                  <td mat-cell *matCellDef="let element"> {{element.dateEcheance}} </td>
+                </ng-container>
+                <!-- Weight Column -->
+                
+                <ng-container matColumnDef="typeCredit">
+                  <th mat-header-cell *matHeaderCellDef style="min-width: 115px;"> Type credit</th>
+                  <td mat-cell *matCellDef="let element"> {{replaceUnderscoreWithSpace(element.typeCredit)}} </td>
+                </ng-container>
+                <!-- Status Compte Bancaire Column -->
+                
+                <ng-container matColumnDef="statusCredit">
+                  <th mat-header-cell *matHeaderCellDef > Status credit </th>
+                  <td mat-cell *matCellDef="let element">
+                    <!-- Mat Button Toggle Group for Bold, Italic, Underline -->
+                    <mat-button-toggle-group [(ngModel)]="element.statusCredit" name="fontStyle" aria-label="Font Style">
+                        <mat-button-toggle value="Refusé" (click)="onRefuseClick(element)" [ngClass]="{'bold': element.statusCredit === 'Refusé'}">Refusé</mat-button-toggle>
+                        <mat-button-toggle value="En_cours" (click)="onEnCoursClick(element)" [ngClass]="{'italic': element.statusCredit === 'En_cours'}">En cours</mat-button-toggle>
+                        <mat-button-toggle value="Approuvé"  (click)="onApprouveClick(element)" [ngClass]="{'underline': element.statusCredit === 'Approuvé'}">Approuvé</mat-button-toggle>
+                        </mat-button-toggle-group>
+                  </td>                
+                </ng-container>
+                
+    
+                
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>            
+            </mat-tab>
+          
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+                Second
+              </ng-template>
+              Content 2
+            </mat-tab>
+          
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+                Third
+              </ng-template>
+          
+              Content 3
+            </mat-tab>
+          </mat-tab-group>
+          
+      </div>
+    </div>
+  </div>
+</div>

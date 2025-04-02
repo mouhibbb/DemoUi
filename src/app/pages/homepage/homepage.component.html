@@ -43,30 +43,6 @@
           action="#"
           class="p-5"
           style="background-color: transparent; border-radius: 8px">
-          
-          <div class="row form-group" *ngIf="showSignupFields">
-            <div class="col-md-12">
-              <input
-                type="text"
-                name="lastName"
-                id="lastname"
-                [(ngModel)]="lastname"
-                class="form-control"
-                placeholder="Nom"/>
-            </div>
-          </div>
-          <div class="row form-group" *ngIf="showSignupFields">
-            <div class="col-md-12">
-              <input
-                type="text"
-                id="firstname"
-                name="firstname"
-                [(ngModel)]="firstname"
-                class="form-control"
-                placeholder="Prénom"/>
-            </div>
-          </div>
-
           <div class="row form-group">
             <div class="col-md-12">
               <input
@@ -75,7 +51,8 @@
                 name="email"
                 [(ngModel)]="email"
                 class="form-control"
-                placeholder="Email"/>
+                placeholder="Email"
+                required/>
             </div>
           </div>
 
@@ -87,31 +64,20 @@
                 [(ngModel)]="password"
                 name="password"
                 class="form-control"
-                placeholder="Mot de passe"/>
-            </div>
-          </div>
-          <div class="row form-group" *ngIf="showSignupFields">
-            <div class="col-md-12">
-              <input
-                type="password"
-                name="confirPassword"
-                id="confirPassword"
-                [(ngModel)]="confirmPassword"
-                class="form-control"
-                placeholder="Confirmer le mot de passe"/>
+                placeholder="Mot de passe"
+                />
             </div>
           </div>
 
-          <div class="row form-group" *ngIf="!showSignupFields">
+          <div class="row form-group">
             <div class="col-md-12">
               <input
                 type="button"
                 value="Se connecter"
                 style="font-weight: bold"
-                class="btn btn-primary btn-md text-white w-100" (click)="seConnecter()"/>
-            </div>
+                class="btn btn-primary btn-md text-white w-100" (click)="seConnecter()"/>            </div>
           </div>
-          <div class="row form-group" *ngIf="!showSignupFields">
+          <div class="row form-group">
             <!-- Lien Mot de passe oublié -->
             <div class="col-md-12 text-center" >
               <a href="#" class="text-white" style="font-size: 0.9em"
@@ -119,7 +85,7 @@
               >
             </div>
           </div>
-          <div class="row form-group" *ngIf="!showSignupFields">
+          <div class="row form-group">
             <!-- Bouton Créer un compte -->
             <div class="col-md-12">
               <input
@@ -127,19 +93,10 @@
                 value="Créer un compte"
                 class="btn btn-outline-primary btn-md w-100"
                 style="border-width: 2px; font-weight: bold"
-                (click)="showSignupFields = !showSignupFields"/>
+                routerLink="inscri"/>
             </div>
             </div>
-            <div class="row form-group" *ngIf="showSignupFields">
-                <!-- Bouton Créer un compte -->
-                <div class="col-md-12">
-                  <input
-                    type="button"
-                    value="S'inscrire"
-                    class="btn btn-outline-primary btn-md w-100"
-                    style="border-width: 2px; font-weight: bold" (click)="inscription()"/>
-                </div>
-          </div>
+
         </form>
       </div>
     </div>

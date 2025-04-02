@@ -13,7 +13,6 @@
 
             <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
               <li><a routerLink="/home" class="nav-link">Home</a></li>
-              <li *ngIf="isConnected"><a class="nav-link" >Dashboard</a></li>
 
               <li class="has-children">
                 <a routerLink="/aboutUs" class="nav-link">About Us</a>
@@ -34,10 +33,19 @@
                   </li>
                 </ul>
               </li>
-              
-              
-              <li><a href="/blog" class="nav-link">Blog</a></li>
-              <li><a href="/contact" class="nav-link">Contact</a></li>
+              <li class="has-children" *ngIf="role==='Admin'||isConnected">
+                <a  class="nav-link">Accounts</a>
+                <ul class="dropdown">
+                  <li><a routerLink="allAccounts" class="nav-link">All Accounts</a></li>
+                  <li><a routerLink="nvCompte" class="nav-link">New Accounts</a></li>
+
+                </ul>
+              </li>
+              <li *ngIf="role==='Admin'||isConnected"><a routerLink="usersForAdmin" class="nav-link">Users</a></li>
+              <!--<li *ngIf="role==='Admin'||isConnected"><a routerLink="nvCompte" class="nav-link">New Accounts</a></li>
+              <li *ngIf="role==='Admin'||isConnected"><a routerLink="allAccounts" class="nav-link">All Accounts</a></li>-->
+              <li *ngIf="role==='Admin'||isConnected"><a routerLink="consultCreditForAdmin" class="nav-link">Credit</a></li>
+
               <li *ngIf="isConnected"><a routerLink="/" class="nav-link" (click)="logout()">Déconnexion</a></li>
               <li class="social"><a href="#contact-section" class="nav-link"><span class="icon-facebook"></span></a></li>
               <li class="social"><a href="#contact-section" class="nav-link"><span class="icon-twitter"></span></a></li>

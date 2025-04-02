@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Choisissez le Compte Concerné</h2>
+<mat-dialog-content>
+  <mat-form-field appearance="outline" style="width: 100%;">
+    <mat-label>Compte</mat-label>
+    <mat-select [(ngModel)]="selectedCompte">
+      <mat-option *ngFor="let compte of receivedData" [value]="compte.idCompte">
+        {{ compte.idCompte }} - {{ compte.nom }}  <!-- Afficher plus d'infos, ici par exemple nom -->
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button class="cancel-btn" (click)="onCancel()">Annuler</button>
+  <button mat-flat-button class="confirm-btn" (click)="onConfirm()">Confirmer</button>
+</mat-dialog-actions>

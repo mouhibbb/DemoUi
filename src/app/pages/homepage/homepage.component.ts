@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ChangeDetectorRef, Component } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { SharedService } from '../../services/shared.service';
 import { FormsModule } from '@angular/forms'; // Importez FormsModule
@@ -8,21 +8,21 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-homepage',
   standalone:true,
-  imports:[FormsModule,CommonModule],
+  imports:[FormsModule,CommonModule,RouterModule],
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent {
+  role:string='';
   isConnected!:boolean;
  // public connected:boolean=false
-  showSignupFields: boolean = false; // Variable pour gérer l'affichage des champs supplémentaires
   firstname: string = '';
   lastname: string = '';
   email: string = '';
   password: string = '';
   confirmPassword: string = '';
   isActivated: Boolean=false;
-  constructor(private userService:UserService, private ro : Router, private sharedervice:SharedService){
+  constructor(private userService:UserService, private route : Router, private sharedervice:SharedService){
 
   }
   // Fonction pour afficher/masquer les champs supplémentaires
@@ -55,8 +55,11 @@ export class HomepageComponent {
         next: (response) => {
           console.log('Utilisateur enregistré avec succès:', response);
           // Réinitialisez le formulaire après l'enregistrement
-          this.showSignupFields = !this.showSignupFields;
-
+          this.firstname = '';
+          this.lastname = '';
+          this.email = '';
+          this.password = '';
+          this.confirmPassword = '';
         },
         error: (error) => {
           console.error('Erreur lors de l\'enregistrement:', error);
@@ -68,28 +71,30 @@ export class HomepageComponent {
     }
   }
 
-  seConnecter(){
-    console.log("bonjour");
-    
-    const loginData = {
-      email: this.email,
-      password: this.password
-
-  }
-    console.log(loginData);
-    
+  seConnecter(){  
+    if (this.email && this.password) {
+      const loginData = {
+        email: this.email,
+        password: this.password
+      };  
     this.userService.loginUser(loginData).subscribe({
       next: (response) => {
-        console.log('Connexion réussie:', response);
-        
         
         if (this.password) {
-          console.log('Mot de passe valide');
-          // Rediriger l'utilisateur ou stocker les informations de session
-          this.ro.navigate(['home']);
           this.sharedervice.setConnected()
           console.log(this.isConnected);
+            // Met à jour `role` immédiatement après connexion
+            this.role = response.role;
+            this.isConnected = true; // Mise à jour de l'état de connexion
           
+          localStorage.setItem('userEmail', loginData.email);
+          localStorage.setItem('userType', response.role)
+          if (response.role=="User") {
+            this.route.navigate(['home']);
+
+          }else{
+            this.route.navigate(['dashboardAdmin'])
+          }
         } else {
           console.log('Mot de passe incorrect');
         }
@@ -104,5 +109,6 @@ export class HomepageComponent {
         }      }
     });
 
+}
 }
 }
