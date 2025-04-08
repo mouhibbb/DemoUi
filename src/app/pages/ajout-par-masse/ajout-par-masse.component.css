@@ -1,0 +1,37 @@
+/* Styles généraux pour les boutons */
+.btn-custom {
+    background-color: #fd7e14; /* Couleur de fond bleue */
+    color: white; /* Texte blanc */
+    padding: 10px 20px; /* Padding pour espacement interne */
+    border: none; /* Supprime la bordure par défaut */
+    border-radius: 5px; /* Coins arrondis */
+    font-size: 16px; /* Taille du texte */
+    cursor: pointer; /* Curseur pointer au survol */
+    transition: background-color 0.3s, transform 0.2s; /* Animation au survol */
+    margin-top: 0; /* Retirer l'espacement top par défaut */
+    white-space: nowrap; /* Empêche le texte de se diviser en plusieurs lignes */
+    width: 220px; /* <- largeur fixe pour tous les boutons */
+    text-align: center; /* pour bien centrer le texte */
+  
+  }
+  
+  .btn-custom:hover {
+    background-color: #e56b00 ; /* Changer la couleur au survol */
+    transform: scale(1.05); /* Légère augmentation de taille au survol */
+  }
+  
+  .btn-custom:focus {
+    outline: none; /* Retirer le contour de focus */
+  }
+  
+  /* Améliorer l'apparence des inputs */
+  .input-file {
+    padding: 10px;
+    border: 1px solid #ccc; /* Bordure grise */
+    border-radius: 5px; /* Coins arrondis */
+    background-color: #f9f9f9; /* Fond léger pour l'input */
+    font-size: 14px; /* Taille du texte */
+    background-color: transparent !important;
+    width: auto; /* L'input occupe la largeur nécessaire */
+    margin-left: 10px; /* Espacement à gauche entre le bouton et l'input */
+  }

@@ -70,8 +70,6 @@ constructor(private userService:UserService,private compteService:CompteService)
     })
     })
   }
-  uploadCompte() {
-   
-}
+
 
 }
