@@ -7,7 +7,7 @@ import { catchError, map, Observable, of } from 'rxjs';
   providedIn: 'root',
 })
 export class CompteService {
-  private apiUrl = 'http://localhost:8081/api'; // Remplacez par l'URL de votre API
+  private apiUrl = 'http://localhost:8081/api/compte'; // Remplacez par l'URL de votre API
 
   constructor(private httpClient: HttpClient) {}
   // registerCompte(compteData: any, email: String): Observable<any> {
@@ -21,8 +21,10 @@ export class CompteService {
   registerCompte(compteData: any, email: string): Observable<any> {
     const payload = { compteData, email };
     console.log("Données envoyées à l'API :", payload);
-    return this.httpClient.post(`${this.apiUrl}/compte`, payload);}
+    return this.httpClient.post(`${this.apiUrl}`, payload);}
   getIfCompteIsActivated(connectedEmail: any): Observable<boolean> {
+    console.log(connectedEmail);
+    
     console.log("Données de l'utilisateur à envoyer à l'API:", connectedEmail);
 
     return this.httpClient
@@ -40,8 +42,16 @@ export class CompteService {
         })
       );
   }
+  getAccountbyUserAndActivated(email: any): Observable<any> {
+    console.log(email);
+    
+    console.log("Données de l'utilisateur à envoyer à l'API:", email);
+
+    return this.httpClient.get<any[]>(`${this.apiUrl}/getList`, { params: { email } })
+
+  }
   getNewAccount() {
-    return this.httpClient.get<[]>(`${this.apiUrl}/compte/getnewAccount`);
+    return this.httpClient.get<[]>(`${this.apiUrl}/getnewAccount`);
   }
   ApprouveClicked(idCompte: any) {
     console.log('user', idCompte);
@@ -65,12 +75,24 @@ export class CompteService {
     console.log('user', idCompte);
 
     this.httpClient
-      .put(`${this.apiUrl}/compte/encours/${idCompte}`, idCompte)
+      .put(`${this.apiUrl}/encours/${idCompte}`, idCompte)
       .subscribe((response) => {
         console.log(response);
       });
   }
   getAllAccounts(){
-   return this.httpClient.get<[]>(`${this.apiUrl}/compte`)
+   return this.httpClient.get<[]>(`${this.apiUrl}`)
+  }
+  envoyerVirement(virementRequest:any){
+    return this.httpClient.post(`${this.apiUrl}/send`,virementRequest)
+  }
+  setAmount(amountRequest:any){
+   return this.httpClient.post(`${this.apiUrl}/setAmount`,amountRequest)
+  }
+  removeAmount(amountRequest:any){
+    return this.httpClient.post(`${this.apiUrl}/removeAmount`,amountRequest)
+   }
+   sendUrlAccounts(urlAccounts:any){
+  return  this.httpClient.post(`${this.apiUrl}/urlAccounts`,urlAccounts)
   }
 }

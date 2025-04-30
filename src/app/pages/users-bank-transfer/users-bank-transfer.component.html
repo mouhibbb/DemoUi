@@ -6,6 +6,43 @@
   <div class="container">
     <div class="row align-items-center">
       <div class="col-md-12 mt-lg-5">
+        <!-- <div class="form-group"> -->
+        <h1 style="color: #fd7e14; text-align: center; margin-bottom: 20px;">Effecuter un virement</h1>
+               
+          <!-- Remplacer le select classique par mat-select -->
+          <mat-form-field appearance="fill" style="width: 100%;display: block">
+            <mat-label>📂 Sélectionnez Compte</mat-label>
+            <mat-select [(ngModel)]="selectedAccount">
+              <mat-option
+                *ngFor="let compte of accountList" [value]="compte.idCompte"
+                >
+                {{ compte.idCompte }}
+
+                {{ compte.type_compte }}
+
+               
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!-- Formulaire d’envoi d’argent, affiché SEULEMENT si selectedAccount est défini -->
+        <form *ngIf="selectedAccount" (ngSubmit)="envoyerArgent()">
+          <mat-form-field appearance="fill" style="width: 100%; margin-top: 20px">
+            <mat-label>ID Compte cible</mat-label>
+            <input matInput type="number" [(ngModel)]="compteCibleId" name="compteCibleId" required />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" style="width: 100%">
+            <mat-label>💰 Montant à envoyer</mat-label>
+            <input matInput type="number" [(ngModel)]="montant" name="montant" required />
+          </mat-form-field>
+
+          <section>
+            <div class="example-button-row full-width-button">
+              <button type="submit" mat-flat-button class="orange-button">Envoyer</button>
+            </div>
+          </section>        
+        </form>
+       <!-- </div> -->
       </div>
     </div>
   </div>

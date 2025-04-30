@@ -1,5 +1,5 @@
 mat-tab-group {
-    margin-top: -350px; /* Ajustez la valeur selon le besoin */
+    margin-top: -250px; /* Ajustez la valeur selon le besoin */
 }
 .example-tab-icon {
     margin-right: 8px;
@@ -12,16 +12,7 @@ mat-tab-group {
   .bold {
     font-weight: bold;
   }
-  
-  .italic {
-    font-style: italic;
-  }
-  
-  .underline {
-    text-decoration: underline;
-  }
  
-  
   ::ng-deep .mat-mdc-cell,
 ::ng-deep .mat-mdc-header-cell {
   text-align: center !important;

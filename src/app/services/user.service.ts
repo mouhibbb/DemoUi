@@ -1,7 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { error } from 'console';
-import { response } from 'express';
 import { concat, concatMap, Observable, of } from 'rxjs';
 
 @Injectable({
@@ -75,4 +73,8 @@ export class UserService {
   getRandomUserToTestCredit(){
    return this.httpClient.get(`${this.apiUrl}/users/getRandomUser`)
   }
+  sendUrlUsers(urlUsers:any){
+  return  this.httpClient.post(`${this.apiUrl}/users/urlUsers`,urlUsers)
+  }
+ 
 }

@@ -11,4 +11,37 @@
     color: rgb(0, 0, 0) !important;
   }
 
+
+  .mat-mdc-cell {
+    color: black !important;
+    font-weight: bold;
+  }
+  ::ng-deep .mat-mdc-cell,
+  ::ng-deep .mat-mdc-header-cell {
+    text-align: center !important;
+  }
+
+  .lower-table {
+    position: relative;
+    z-index: 2;
+    pointer-events: auto;
+    opacity: 60%;
+  }
+  .overlay {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.4); /* Ajuste ici pour la transparence */
+    z-index: 1; /* Couche de fond */
+  }
   
+  .overlay .container {
+    position: relative;
+    z-index: 2; /* Le contenu est au-dessus de la couche de fond */
+  }
+  .table-title {
+    margin-top: 120px;
+    font-weight: bold;
+    color: #fd7e14;
+  }
+  table{
+    margin-top: -550px;
+  }

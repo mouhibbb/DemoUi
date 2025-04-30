@@ -20,3 +20,12 @@ mat-tab-group {
   .underline {
     text-decoration: underline;
   }
+  ::ng-deep .mat-mdc-cell,
+::ng-deep .mat-mdc-header-cell {
+  text-align: center !important;
+}
+.email-link {
+  color: #D35400 !important;
+  text-decoration: underline; /* facultatif */
+  font-weight: bold;
+}

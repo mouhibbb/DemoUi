@@ -93,7 +93,7 @@ export class HomepageComponent {
             this.route.navigate(['home']);
 
           }else{
-            this.route.navigate(['dashboardAdmin'])
+            this.route.navigate(['nvCompte'])
           }
         } else {
           console.log('Mot de passe incorrect');

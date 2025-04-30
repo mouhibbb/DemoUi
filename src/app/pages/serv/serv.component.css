@@ -1,0 +1,29 @@
+button {
+
+    background: none;
+    border-radius: 15px;
+    color: #333;
+    font: inherit;
+    padding: 0.8em 2em;
+    cursor: pointer;
+    font-weight: bold;
+    border: 2px solid #333;
+    transition: all 0.3s ease;
+    width: 250px;             /* même largeur pour tous */
+    height: 55px;  
+  }
+  button:hover {
+    background: #fd7e14;      /* fond gris foncé au survol */
+    color: white;          /* texte blanc */
+    border-color: #fd7e14;    /* bordure reste gris foncé */
+  }
+  p{
+    font-family: 'Segoe UI';
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    max-width: 600px;
+    font-weight: bold;
+    }

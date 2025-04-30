@@ -17,6 +17,7 @@ import { ConsultCreditComponent } from './pages/consult-credit/consult-credit.co
 import { CreditForAdminComponent } from './pages/credit-for-admin/credit-for-admin.component';
 import { InscriptionComponent } from './pages/inscription/inscription.component';
 import { AjoutParMasseComponent } from './pages/ajout-par-masse/ajout-par-masse.component';
+import { PutMoneyComponent } from './pages/put-money/put-money.component';
 
 export const routes: Routes = [
     { path: '', component: HomepageComponent }, 
@@ -28,15 +29,15 @@ export const routes: Routes = [
     { path: 'inscri', component: InscriptionComponent },
 
     { path: 'usersBankTransfer', component: UsersBankTransferComponent  ,canActivate:[guardUsersGuard]},
-    { path: 'dashboardUser', component: DashboardCompteComponent },
+    { path: 'dashboardUser', component: DashboardCompteComponent ,canActivate:[guardUsersGuard]},
     { path: 'dashboardAdmin', component: DashboardAdminComponent ,canActivate:[guardAdminGuard]},
     { path: 'nvCompte', component: ConsultNvCompteComponent,canActivate:[guardAdminGuard]},
     {path:  'allAccounts',component:AllAccountComponent,canActivate:[guardAdminGuard]},
     {path:  'usersForAdmin',component:DashboardUsersForAdminComponent,canActivate:[guardAdminGuard]},
     {path:  'consultCredit',component:ConsultCreditComponent,canActivate:[guardUsersGuard]},
     {path:  'consultCreditForAdmin',component:CreditForAdminComponent,canActivate:[guardAdminGuard]},
-    {path:  'ajoutparmasse',component:AjoutParMasseComponent},
-
+    {path:  'ajoutparmasse',component:AjoutParMasseComponent,canActivate:[guardUsersGuard]},
+    {path:   'putmoney',component:PutMoneyComponent,canActivate:[guardUsersGuard]},
     { path: '**', redirectTo: '' }, // Redirige vers la route par défaut si le chemin n'existe pas
   
 ];

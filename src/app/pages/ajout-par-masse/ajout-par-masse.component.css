@@ -30,8 +30,20 @@
     border: 1px solid #ccc; /* Bordure grise */
     border-radius: 5px; /* Coins arrondis */
     background-color: #f9f9f9; /* Fond léger pour l'input */
-    font-size: 14px; /* Taille du texte */
+    font-size: 18px; /* Taille du texte */
     background-color: transparent !important;
-    width: auto; /* L'input occupe la largeur nécessaire */
+    width: 400px; /* L'input occupe la largeur nécessaire */
     margin-left: 10px; /* Espacement à gauche entre le bouton et l'input */
+  }
+  .section-title {
+    margin-top: 250px; /* supprime la marge haute */
+    color: #fd7e14;
+    font-size: 3.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  .input-file::placeholder{
+    color: whitesmoke;
   }

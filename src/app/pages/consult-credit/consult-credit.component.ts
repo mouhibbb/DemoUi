@@ -24,7 +24,6 @@ getUserCredit(){
     return; }
   else {this.creditService.getCredit(email).subscribe((response:any[])=>{
     if(Array.isArray(response)){
-      
       this.dataSource.data=response   
       console.log(this.dataSource.data);
     }
